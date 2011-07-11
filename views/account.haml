@@ -1,0 +1,25 @@
+%p.user_info
+  You have generated 
+  %em 
+    =@user.total_imgs
+  = 'image' + (@user.total_imgs == 1 ? '' : 's')
+  and 
+  %em 
+    =@user.total_pdfs
+  = 'pdf' + (@user.total_pdfs == 1 ? '.' : 's.')
+
+%table#history
+  %tr
+    %th.icon 
+    %th source
+    %th.creation_time creation time
+  - @user.histories(order: [:created_at.desc]).each do |history|
+    %tr
+      %td= "<img src='/images/#{history.type}_small_icon.png' />" 
+      %td
+        %a{href: history.hosted_url, target: 'blank'}
+          - if history.source.match(/^http/)
+            = history.source 
+          - else
+            HTML FILE
+      %td= history.created_at.strftime("%D %T")

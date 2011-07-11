@@ -1,0 +1,20 @@
+<div id="code_sample">
+  <code class="example">
+  <pre>
+    class Html2Cloud
+      include HTTParty
+      base_uri 'http://htmltocloud.com'
+      basic_auth '<%=@user.id%>', '<%=@user.api_key%>'
+    end
+  </pre>
+  </code>
+  <code class="example">
+  <pre>
+    Html2Cloud.post('/img', body: {url: "http://www.google.com"})
+    <i>#=&gt;<%= @user.public_url('http://www.google.com', 'jpg') %></i> 
+    
+    Html2Cloud.post('/pdf', body: {html: "&lt;blink&gt;Oh Hai!&lt;/blink&gt;"})
+    <i>#=&gt;<%= @user.public_url('<blink>Oh ha!</blink>', 'pdf') %></i>
+  </pre>
+  </code>
+</div>

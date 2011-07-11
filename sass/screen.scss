@@ -1,0 +1,120 @@
+@import "base";
+
+@mixin rounded-box {
+  padding: 5px;
+  background: #eee;
+  @include border-radius(10px); 
+  border: 1px solid #ccc;
+}
+
+html{ 
+  font-family: Helvetica;
+}
+body{
+  min-width: 960px;
+}
+h1 { 
+  font-size: 1.5em; 
+  margin: 1em 0 0.4em;
+}
+em { 
+  font-style: none; 
+  font-size: 1.3em; 
+  font-weight: bold; 
+}
+
+#top_nav{
+  height: 40px;
+  width: 100%;
+}
+
+#banner{
+  height: 200px;
+  @include background(image-url("/images/html2cloud_logo.png") top center no-repeat,
+                      linear-gradient(#ccc, #eee));
+}
+
+#page{
+  @include container;
+}
+
+#api {
+  @include prepend(5);
+  @include column(14);
+  @include append(5);
+  margin: 1em 0;
+}
+
+div#api_demo {
+  font-family: monaco, helvetica, sans;
+  margin: 1.5em 0 1em;
+  padding: 10px;
+  text-align: left;
+  @include prepend(2);
+  @include column(22);
+  p {
+    padding: 0.75em 0;
+  }
+}
+
+.tagline { 
+  font-style: italic; 
+  color: #666; 
+  margin-bottom: 1em;
+}
+
+/* Account */
+#header {
+  p.signout {
+    float: right;
+    margin: 25px 25px 0 0;
+    a {
+      @include button-base;
+      border: none;
+    }
+    a.signout {
+      @include rounded-box;
+      @include border-radius(5px); 
+      @include button-base;
+    }
+  }
+}
+
+
+p.api { 
+  @include column(5);
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  .method { color: #888 }
+  .tagline { font-size: 0.85em }
+}
+
+p.user_info{
+  @include rounded-box;
+  width: 66%;
+  margin: 10px auto;
+  padding: 10px;
+  line-height: 1.3em;
+  em {
+    font-size: 1.1em;
+    color: #333;
+  }
+}
+
+table#history {
+  width: 90%;
+  margin: 10px auto;
+  thead {
+    @include border-radius(10px);
+  }
+  th, td { padding: 5px; }
+  th { color: white; background: #666; }
+  th.creation_time { width: 20% }
+  th.icon { width: 3% }
+  tr:nth-child(2n) { background: #eee }
+}
+
+#code_sample {
+  margin-top: 10px;
+}
+

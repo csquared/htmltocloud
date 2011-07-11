@@ -1,0 +1,2 @@
+rvm use --create 1.9.2@htmltocloud
+export JANRAIN_KEY='f17bf5d826e488881e8f749a60d99d8723c7edf0'

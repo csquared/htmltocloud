@@ -1,0 +1,29 @@
+!!!
+%html
+%head 
+  %title htmltocloud
+  %link{rel:"stylesheet", type: "text/css", href: "http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css"}
+  %link{rel:'stylesheet', href: '/css/screen.css', type: 'text/css'}
+
+%body
+  - if session[:heroku_sso]
+    = Service::HerokuAddOn::NAV_HEADER
+
+  %div#page
+    - unless session[:heroku_sso]
+      %div#header 
+        %a{href: '/'}
+          %img{src: '/images/logo_small.png'}
+
+        %p.signout
+          %a{href: '/api'}
+            API
+          %a{href: '/account'}
+            Account
+          = @user.username
+          %a{class: 'signout', href: '/signout'}
+            Sign Out
+          
+    =yield
+
+  %div#footer

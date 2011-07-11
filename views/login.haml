@@ -1,0 +1,9 @@
+<!-- <a class="rpxnow" onclick="return false;"
+href="https://htmltocloud.rpxnow.com/openid/v2/signin?token_url=http%3A%2F%2Flocalhost:4567%2Flogin"> Sign In </a>  -->
+
+- if ENV['RACK_ENV'] == 'production'
+  %div#login
+    %iframe{src: "http://htmltocloud.rpxnow.com/openid/embed?token_url=http%3A%2F%2Fhtmltocloud.herokuapp.com%2Flogin", scrolling: "no", frameBorder: "no", allowtransparency: "true", style: "width:400px;height:240px"} 
+- else
+  %div#login
+    %iframe{src: "http://htmltocloud.rpxnow.com/openid/embed?token_url=http%3A%2F%2Flocalhost%3A4567%2Flogin", scrolling: "no", frameBorder: "no", allowtransparency: "true", style: "width:400px;height:240px"} 

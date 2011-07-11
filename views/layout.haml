@@ -1,0 +1,21 @@
+!!!
+%html
+%head 
+  %title htmltocloud
+  %link{rel:'stylesheet', href: '/css/screen.css', type: 'text/css'}
+
+  %script
+    var rpxJsHost = (("https:" == document.location.protocol) ? "https://" : "http://static."); document.write(unescape("%3Cscript src='" + rpxJsHost + "rpxnow.com/js/lib/rpx.js' type='text/javascript'%3E%3C/script%3E"));
+
+  %script
+    RPXNOW.overlay = true;
+    RPXNOW.language_preference = 'en';
+
+%body
+  %div#top_nav
+  %div#banner
+
+  %div#page
+    =yield
+
+  %div#footer

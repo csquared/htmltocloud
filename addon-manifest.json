@@ -1,0 +1,10 @@
+{
+  "id": "html2cloud",
+  "api": {
+    "config_vars": ["HTML2CLOUD_URL"],
+    "password": "3xPEsUKbcSUcrf34",
+    "sso_salt": "fsGBBMIPrYqa6kus",
+    "production": "https://htmltocloud.com/",
+    "test": "http://localhost:4567/"
+  }
+}

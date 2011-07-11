@@ -1,0 +1,23 @@
+= flash['error']
+%div#api_demo
+  %code
+    %p &gt;&nbsp;&nbsp;curl https://&lt;id&gt;@&lt;key&gt;:htmltocloud.com/&lt;format&gt; -d 'url=http://reddit.com' 
+    %p &gt;&nbsp;&nbsp;http://c535292.r92.cf2.rackcdn.com/1a3611086d3dae2bbde0197d4896e8062b97a223.&lt;format&gt;
+
+%div#api 
+  %p.api
+    %span.method POST
+    = "/img"
+    %br
+    %span.tagline url: http://anything.com
+    %br
+    %img{src: '/images/html2jpg.png'}
+  %p.api
+    %span.method POST
+    = "/pdf"
+    %br
+    %span.tagline html: &lt;i&gt;Hello, world!&lt;/i&gt;
+    %br
+    %img{src: '/images/html2pdf.png'}
+
+  = haml :login
